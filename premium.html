@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Premium - ViierMods</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23d98f40'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial' font-weight='900' font-size='20' fill='%230d0f14'%3EV%3C/text%3E%3C/svg%3E" />
+  <style>
+    .premium-hero {
+      background: linear-gradient(135deg, rgba(217, 143, 64, 0.1) 0%, rgba(171, 71, 188, 0.1) 100%);
+      padding: var(--space-4xl) 0;
+      text-align: center;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-2xl);
+      max-width: 1000px;
+      margin: -60px auto var(--space-4xl);
+      padding: 0 var(--space-lg);
+    }
+    .pricing-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: var(--space-2xl);
+      position: relative;
+      transition: all var(--transition-base);
+    }
+    .pricing-card.featured {
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 30px rgba(217, 143, 64, 0.15);
+      transform: translateY(-20px);
+    }
+    .pricing-card.featured::before {
+      content: 'Most Popular';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-primary);
+      color: #0d0f14;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+    }
+    .pricing-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: var(--space-sm);
+    }
+    .pricing-price {
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: var(--space-xl);
+    }
+    .pricing-price span {
+      font-size: 16px;
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+    .pricing-features {
+      margin-bottom: var(--space-2xl);
+    }
+    .pricing-feature {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+    .pricing-feature::before {
+      content: '✓';
+      color: var(--accent-green);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <div class="header-inner">
+      <a href="/" class="logo"><div class="logo-icon">V</div><div class="logo-text">VIIER<span>MODS</span></div></a>
+      <nav class="main-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/games" class="nav-link">Games</a>
+        <a href="/mods" class="nav-link">Mods</a>
+        <a href="/community" class="nav-link">Community</a>
+        <a href="/collections" class="nav-link">Collections</a>
+        <a href="/news" class="nav-link">News</a>
+      </nav>
+      <div class="header-actions">
+        <a href="/login" class="btn btn-ghost" style="border: none;">Log In</a>
+        <a href="/signup" class="btn btn-primary">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="premium-hero">
+    <div class="container">
+      <h1 style="font-family:'Rajdhani'; font-size:48px; font-weight:700; margin-bottom:16px;">Upgrade to <span style="color:var(--accent-primary)">Premium</span></h1>
+      <p style="color:var(--text-secondary); font-size:18px; max-width:600px; margin:0 auto;">Support mod authors and enjoy blazing fast, ad-free downloads. Unlock the ultimate modding experience.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="pricing-grid">
+      <!-- Free Plan -->
+      <div class="pricing-card">
+        <h3 class="pricing-title">Basic</h3>
+        <div class="pricing-price">$0<span>/forever</span></div>
+        <div class="pricing-features">
+          <div class="pricing-feature">Capped download speeds (2MB/s)</div>
+          <div class="pricing-feature">Ads enabled</div>
+          <div class="pricing-feature">Standard forum access</div>
+          <div class="pricing-feature">Basic collections</div>
+        </div>
+        <button class="btn btn-ghost" style="width: 100%;">Current Plan</button>
+      </div>
+
+      <!-- Premium Plan -->
+      <div class="pricing-card featured">
+        <h3 class="pricing-title" style="color: var(--accent-primary)">Premium Supporter</h3>
+        <div class="pricing-price">$4.99<span>/month</span></div>
+        <div class="pricing-features">
+          <div class="pricing-feature" style="color: var(--text-primary); font-weight: 500;">Uncapped download speeds</div>
+          <div class="pricing-feature" style="color: var(--text-primary); font-weight: 500;">100% Ad-free experience</div>
+          <div class="pricing-feature">One-click collection installs</div>
+          <div class="pricing-feature">Exclusive premium badge</div>
+          <div class="pricing-feature">Directly support mod authors</div>
+          <div class="pricing-feature">Priority server routing</div>
+        </div>
+        <button class="btn btn-primary" style="width: 100%; height: 44px; font-size: 16px;">Subscribe Now</button>
+      </div>
+    </div>
+
+    <div class="container" style="text-align: center; padding-bottom: var(--space-4xl);">
+      <h2 style="font-family: 'Rajdhani'; margin-bottom: var(--space-xl);">Why go Premium?</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-xl); text-align: left;">
+        <div style="background: var(--bg-tertiary); padding: var(--space-lg); border-radius: var(--radius-lg);">
+          <div style="font-size: 32px; margin-bottom: 12px;">⚡</div>
+          <h4 style="margin-bottom: 8px;">Unlimited Speeds</h4>
+          <p style="font-size: 14px; color: var(--text-secondary);">Download massive 10GB+ texture packs in minutes instead of hours with our premium CDN network.</p>
+        </div>
+        <div style="background: var(--bg-tertiary); padding: var(--space-lg); border-radius: var(--radius-lg);">
+          <div style="font-size: 32px; margin-bottom: 12px;">🛡️</div>
+          <h4 style="margin-bottom: 8px;">No Advertisements</h4>
+          <p style="font-size: 14px; color: var(--text-secondary);">Browse the site exactly how it was meant to be seen, completely free from intrusive ads.</p>
+        </div>
+        <div style="background: var(--bg-tertiary); padding: var(--space-lg); border-radius: var(--radius-lg);">
+          <div style="font-size: 32px; margin-bottom: 12px;">❤️</div>
+          <h4 style="margin-bottom: 8px;">Support Creators</h4>
+          <p style="font-size: 14px; color: var(--text-secondary);">A portion of your subscription goes directly into the Mod Author Donation Fund.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:none;padding:0;">
+        <p class="footer-copyright">© 2024 ViierMods. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

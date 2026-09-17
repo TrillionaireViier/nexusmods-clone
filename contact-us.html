@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us - ViierMods</title>
-  <link rel="stylesheet" href="index.css" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23d98f40'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial' font-weight='900' font-size='20' fill='%230d0f14'%3EN%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/index.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23d98f40'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial' font-weight='900' font-size='20' fill='%230d0f14'%3EV%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
   <header class="main-header">
@@ -35,9 +35,28 @@
 
   <main class="container" style="padding-top: var(--space-2xl); padding-bottom: var(--space-3xl); min-height: 40vh;">
     <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-2xl);">
-      <p style="font-size: 16px; color: var(--text-primary); line-height: 1.8;">
-        Need help with your account? Contact our support team...
-      </p>
+      <div style="font-size: 16px; color: var(--text-primary); line-height: 1.8;">
+        
+        <h3 style="font-family:'Rajdhani'; font-size:24px; margin-bottom:12px;">We're Here to Help</h3>
+        <p style="margin-bottom:24px; color:var(--text-secondary);">If you couldn't find the answer to your question in our Help Center or Forums, you can reach out to our support staff directly by opening a ticket below.</p>
+        
+        <form style="display: flex; flex-direction: column; gap: 16px; max-width: 600px;">
+            <div style="display: flex; gap: 16px;">
+                <input type="text" placeholder="Your Name" class="form-input" style="flex:1; padding: 10px; border-radius: 4px; border: 1px solid var(--border-subtle); background: var(--bg-tertiary); color: white;">
+                <input type="email" placeholder="Email Address" class="form-input" style="flex:1; padding: 10px; border-radius: 4px; border: 1px solid var(--border-subtle); background: var(--bg-tertiary); color: white;">
+            </div>
+            <select class="form-input" style="padding: 10px; border-radius: 4px; border: 1px solid var(--border-subtle); background: var(--bg-tertiary); color: white;">
+                <option>Select a Category...</option>
+                <option>Billing & Premium Support</option>
+                <option>Account Recovery</option>
+                <option>Report a User/Mod</option>
+                <option>Business Inquiry</option>
+            </select>
+            <textarea placeholder="Describe your issue in detail..." rows="6" style="padding: 10px; border-radius: 4px; border: 1px solid var(--border-subtle); background: var(--bg-tertiary); color: white; resize: vertical;"></textarea>
+            <button type="button" class="btn btn-primary" style="width: 150px;">Send Message</button>
+        </form>
+    
+      </div>
       <div style="margin-top: var(--space-2xl); padding-top: var(--space-xl); border-top: 1px solid var(--border-subtle);">
         <p style="color: var(--text-tertiary); font-size: 14px;">Last updated: September 2026</p>
       </div>

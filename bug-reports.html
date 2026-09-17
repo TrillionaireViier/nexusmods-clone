@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bug Reports - ViierMods</title>
-  <link rel="stylesheet" href="index.css" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23d98f40'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial' font-weight='900' font-size='20' fill='%230d0f14'%3EN%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/index.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23d98f40'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial' font-weight='900' font-size='20' fill='%230d0f14'%3EV%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
   <header class="main-header">
@@ -35,9 +35,20 @@
 
   <main class="container" style="padding-top: var(--space-2xl); padding-bottom: var(--space-3xl); min-height: 40vh;">
     <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-2xl);">
-      <p style="font-size: 16px; color: var(--text-primary); line-height: 1.8;">
-        Found a bug? Let us know so we can fix it...
-      </p>
+      <div style="font-size: 16px; color: var(--text-primary); line-height: 1.8;">
+        
+        <h3 style="font-family:'Rajdhani'; font-size:24px; margin-bottom:12px;">Help Us Improve</h3>
+        <p style="margin-bottom:16px; color:var(--text-secondary);">Encountered a glitch on the website? Is a download button broken? Let our engineering team know by submitting a detailed bug report.</p>
+        <div style="background: var(--bg-tertiary); padding: var(--space-md); border-radius: var(--radius-md); border: 1px solid var(--border-subtle); margin-bottom: 24px;">
+            <p style="font-size: 14px; margin-bottom: 8px;"><strong>Note:</strong> This page is for reporting issues with the <em>ViierMods website</em> or <em>Mod Manager</em> itself. If a specific mod is crashing your game, please go to that mod's page and use the "Bugs" tab to notify the mod author directly.</p>
+        </div>
+        <form style="display: flex; flex-direction: column; gap: 16px; max-width: 500px;">
+            <input type="text" placeholder="Issue Title (e.g., 'Search bar not working')" class="form-input" style="padding: 10px; border-radius: 4px; border: 1px solid var(--border-subtle); background: var(--bg-tertiary); color: white;">
+            <textarea placeholder="Describe the steps to reproduce the bug..." rows="5" style="padding: 10px; border-radius: 4px; border: 1px solid var(--border-subtle); background: var(--bg-tertiary); color: white; resize: vertical;"></textarea>
+            <button type="button" class="btn btn-primary" style="width: 150px;">Submit Report</button>
+        </form>
+    
+      </div>
       <div style="margin-top: var(--space-2xl); padding-top: var(--space-xl); border-top: 1px solid var(--border-subtle);">
         <p style="color: var(--text-tertiary); font-size: 14px;">Last updated: September 2026</p>
       </div>

@@ -1,19 +1,9 @@
-import os
-
-pages = [
-    ("about-us", "About Us", "Learn about the team behind ViierMods.", "We are a passionate team of gamers and developers dedicated to making modding accessible to everyone..."),
-    ("careers", "Careers", "Join our team and help shape the future of modding.", "Check out our open positions. We are always looking for talented engineers, designers, and community managers to join ViierMods!"),
-    ("press-kit", "Press Kit", "Assets and information for press and media.", "Download high-resolution logos, screenshots, and company fact sheets for your articles..."),
-    ("blog", "Blog", "News, updates, and featured content.", "Read our latest developer diaries, community spotlights, and major platform announcements..."),
-    ("partners", "Partners", "Our industry and community partners.", "We work with leading game studios and hardware manufacturers to provide the best modding tools possible...")
-]
-
-template = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{title} - ViierMods</title>
+  <title>Blog - ViierMods</title>
   <link rel="stylesheet" href="/index.css" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23d98f40'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial' font-weight='900' font-size='20' fill='%230d0f14'%3EV%3C/text%3E%3C/svg%3E" />
 </head>
@@ -38,15 +28,15 @@ template = """<!DOCTYPE html>
 
   <section style="background: var(--bg-secondary); padding: var(--space-3xl) 0; border-bottom: 1px solid var(--border-subtle);">
     <div class="container">
-      <h1 style="font-family:'Rajdhani';font-size:42px;">{title}</h1>
-      <p style="color:var(--text-secondary);max-width:600px;">{subtitle}</p>
+      <h1 style="font-family:'Rajdhani';font-size:42px;">Blog</h1>
+      <p style="color:var(--text-secondary);max-width:600px;">News, updates, and featured content.</p>
     </div>
   </section>
 
   <main class="container" style="padding-top: var(--space-2xl); padding-bottom: var(--space-3xl); min-height: 40vh;">
     <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-2xl);">
       <p style="font-size: 16px; color: var(--text-primary); line-height: 1.8;">
-        {content}
+        Read our latest developer diaries, community spotlights, and major platform announcements...
       </p>
       <div style="margin-top: var(--space-2xl); padding-top: var(--space-xl); border-top: 1px solid var(--border-subtle);">
         <p style="color: var(--text-tertiary); font-size: 14px;">Last updated: September 2026</p>
@@ -67,9 +57,4 @@ template = """<!DOCTYPE html>
     </div>
   </footer>
 </body>
-</html>"""
-
-for file_name, title, subtitle, content in pages:
-    with open(f"{file_name}.html", "w") as f:
-        f.write(template.format(title=title, subtitle=subtitle, content=content))
-    print(f"Generated {file_name}.html")
+</html>

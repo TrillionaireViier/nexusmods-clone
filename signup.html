@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - Nexus Mods</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23d98f40'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial' font-weight='900' font-size='20' fill='%230d0f14'%3EN%3C/text%3E%3C/svg%3E" />
+  <style>
+    .auth-container {
+      max-width: 450px;
+      margin: var(--space-4xl) auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: var(--space-2xl);
+      box-shadow: var(--shadow-lg);
+    }
+    .auth-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-align: center;
+      margin-bottom: var(--space-sm);
+    }
+    .auth-subtitle {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-bottom: var(--space-xl);
+    }
+    .form-group {
+      margin-bottom: var(--space-md);
+    }
+    .form-label {
+      display: block;
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+    }
+    .form-input {
+      width: 100%;
+      height: 44px;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 0 16px;
+      color: var(--text-primary);
+      font-size: 14px;
+      transition: all var(--transition-fast);
+    }
+    .form-input:focus {
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(217, 143, 64, 0.1);
+    }
+    .auth-btn {
+      width: 100%;
+      height: 44px;
+      font-size: 15px;
+      margin-top: var(--space-md);
+    }
+    .auth-links {
+      text-align: center;
+      margin-top: var(--space-md);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><div class="logo-icon">N</div><div class="logo-text">NEXUS<span>MODS</span></div></a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="games.html" class="nav-link">Games</a>
+        <a href="mods.html" class="nav-link">Mods</a>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-ghost">Log In</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="auth-container">
+      <h1 class="auth-title">Join the Community</h1>
+      <p class="auth-subtitle">Create a Nexus Mods account to download mods, endorse creators, and join the discussion.</p>
+      
+      <form action="index.html">
+        <div class="form-group">
+          <label class="form-label">Username</label>
+          <input type="text" class="form-input" placeholder="Choose a username" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-input" placeholder="Create a password" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Confirm Password</label>
+          <input type="password" class="form-input" placeholder="Confirm your password" required>
+        </div>
+        
+        <div class="form-group" style="display: flex; align-items: flex-start; gap: 8px;">
+          <input type="checkbox" id="terms" required style="cursor: pointer; margin-top: 4px;">
+          <label for="terms" style="font-size: 12px; color: var(--text-secondary); cursor: pointer; line-height: 1.4;">
+            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+          </label>
+        </div>
+        
+        <button type="submit" class="btn btn-primary auth-btn">Create Account</button>
+        
+        <div class="auth-links">
+          <span style="color: var(--text-secondary);">Already have an account?</span> <a href="login.html">Log In</a>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

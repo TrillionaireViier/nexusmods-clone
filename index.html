@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexus Mods - The Largest Modding Community</title>
+  <meta name="description" content="Discover, download and share the best community-created mods for your favorite games. Join millions of modders worldwide." />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23d98f40'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial' font-weight='900' font-size='20' fill='%230d0f14'%3EN%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- ============ TOP BANNER ============ -->
+  <div class="top-banner" id="top-banner">
+    🎮 Nexus Mods Premium — Ad-free browsing, unlimited download speed & exclusive features.
+    <a href="#">Get Premium →</a>
+  </div>
+
+  <!-- ============ MAIN HEADER ============ -->
+  <header class="main-header" id="main-header">
+    <div class="header-inner">
+      <!-- Logo -->
+      <a href="#" class="logo" id="logo">
+        <div class="logo-icon">N</div>
+        <div class="logo-text">NEXUS<span>MODS</span></div>
+      </a>
+
+      <!-- Main Navigation -->
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="#" class="nav-link active" id="nav-home">Home</a>
+        <a href="#" class="nav-link" id="nav-games">Games</a>
+        <a href="#" class="nav-link" id="nav-mods">Mods</a>
+        <a href="#" class="nav-link" id="nav-community">Community</a>
+        <a href="#" class="nav-link" id="nav-collections">Collections</a>
+        <a href="#" class="nav-link" id="nav-news">News</a>
+      </nav>
+
+      <!-- Search -->
+      <div class="header-search" id="header-search">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Search mods, games, users..." id="search-input" aria-label="Search" />
+      </div>
+
+      <!-- Actions -->
+      <div class="header-actions" id="header-actions">
+        <button class="btn-icon" id="btn-notifications" aria-label="Notifications" style="position:relative;">
+          🔔
+          <span class="notification-badge"></span>
+          <!-- Notification Dropdown -->
+          <div class="notification-dropdown" id="notification-dropdown">
+            <div class="notification-header">
+              <h3>Notifications</h3>
+              <a href="#" style="font-size: 12px;">Mark all read</a>
+            </div>
+            <div class="notification-list">
+              <div class="notification-item">
+                <div class="notification-dot-indicator"></div>
+                <div class="notification-item-content">
+                  <div class="notification-item-text"><strong>DragonSlayer99</strong> endorsed your mod "Enhanced Blood Textures"</div>
+                  <div class="notification-item-time">2 minutes ago</div>
+                </div>
+              </div>
+              <div class="notification-item">
+                <div class="notification-dot-indicator"></div>
+                <div class="notification-item-content">
+                  <div class="notification-item-text"><strong>ModMaster_X</strong> commented on "Ultimate UI Overhaul"</div>
+                  <div class="notification-item-time">15 minutes ago</div>
+                </div>
+              </div>
+              <div class="notification-item">
+                <div class="notification-dot-indicator" style="background: var(--accent-green);"></div>
+                <div class="notification-item-content">
+                  <div class="notification-item-text">Your mod <strong>"Arcane Weapons Pack"</strong> reached 10,000 downloads! 🎉</div>
+                  <div class="notification-item-time">1 hour ago</div>
+                </div>
+              </div>
+              <div class="notification-item">
+                <div class="notification-dot-indicator" style="background: var(--text-muted);"></div>
+                <div class="notification-item-content">
+                  <div class="notification-item-text"><strong>SkyrimFan2024</strong> added your mod to their collection</div>
+                  <div class="notification-item-time">3 hours ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </button>
+        <button class="btn btn-ghost" id="btn-upload">
+          ⬆️ Upload
+        </button>
+        <div class="user-avatar" id="user-avatar" title="Profile">DL</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO SECTION ============ -->
+  <section class="hero-section" id="hero-section">
+    <div class="hero-slider" id="hero-slider">
+      <!-- Slide 1 -->
+      <div class="hero-slide active" data-slide="0">
+        <div class="hero-slide-bg" style="background-image: url('images/mod_featured_1.png')"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-badge">
+              <span class="pulse-dot"></span>
+              Mod of the Week
+            </div>
+            <h1 class="hero-title">Mystical <span class="highlight">Enchanted Forests</span> Overhaul</h1>
+            <p class="hero-description">Transform your game world with bioluminescent flora, ancient ruins, and atmospheric lighting that brings the wilderness to life.</p>
+            <div class="hero-actions">
+              <button class="btn btn-primary btn-lg" id="hero-download-btn">⬇️ Download Now</button>
+              <button class="btn btn-ghost btn-lg" id="hero-details-btn">View Details</button>
+            </div>
+            <div class="hero-stats">
+              <div class="hero-stat">
+                <div class="hero-stat-value count-up" data-target="482000">482K</div>
+                <div class="hero-stat-label">Downloads</div>
+              </div>
+              <div class="hero-stat">
+                <div class="hero-stat-value count-up" data-target="28400">28.4K</div>
+                <div class="hero-stat-label">Endorsements</div>
+              </div>
+              <div class="hero-stat">
+                <div class="hero-stat-value">v3.2.1</div>
+                <div class="hero-stat-label">Latest Version</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="hero-slide" data-slide="1">
+        <div class="hero-slide-bg" style="background-image: url('images/mod_featured_2.png')"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-badge">
+              <span class="pulse-dot"></span>
+              Trending Now
+            </div>
+            <h1 class="hero-title">Medieval Towns <span class="highlight">Reimagined</span></h1>
+            <p class="hero-description">Complete overhaul of all major towns with 4K textures, new NPCs, improved lighting, and immersive cobblestone streets.</p>
+            <div class="hero-actions">
+              <button class="btn btn-primary btn-lg">⬇️ Download Now</button>
+              <button class="btn btn-ghost btn-lg">View Details</button>
+            </div>
+            <div class="hero-stats">
+              <div class="hero-stat">
+                <div class="hero-stat-value">1.2M</div>
+                <div class="hero-stat-label">Downloads</div>
+              </div>
+              <div class="hero-stat">
+                <div class="hero-stat-value">56.7K</div>
+                <div class="hero-stat-label">Endorsements</div>
+              </div>
+              <div class="hero-stat">
+                <div class="hero-stat-value">v5.0.0</div>
+                <div class="hero-stat-label">Latest Version</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="hero-slide" data-slide="2">
+        <div class="hero-slide-bg" style="background-image: url('images/mod_featured_3.png')"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-badge">
+              <span class="pulse-dot"></span>
+              Editor's Choice
+            </div>
+            <h1 class="hero-title">Neon Streets: <span class="highlight">Cyberpunk</span> Overhaul</h1>
+            <p class="hero-description">A complete visual transformation featuring ray-traced reflections, volumetric fog, neon-soaked atmosphere, and 200+ new assets.</p>
+            <div class="hero-actions">
+              <button class="btn btn-primary btn-lg">⬇️ Download Now</button>
+              <button class="btn btn-ghost btn-lg">View Details</button>
+            </div>
+            <div class="hero-stats">
+              <div class="hero-stat">
+                <div class="hero-stat-value">890K</div>
+                <div class="hero-stat-label">Downloads</div>
+              </div>
+              <div class="hero-stat">
+                <div class="hero-stat-value">41.3K</div>
+                <div class="hero-stat-label">Endorsements</div>
+              </div>
+              <div class="hero-stat">
+                <div class="hero-stat-value">v2.8.0</div>
+                <div class="hero-stat-label">Latest Version</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Dots -->
+    <div class="hero-dots" id="hero-dots">
+      <div class="hero-dot active" data-slide="0"></div>
+      <div class="hero-dot" data-slide="1"></div>
+      <div class="hero-dot" data-slide="2"></div>
+    </div>
+  </section>
+
+  <!-- ============ GAME CATEGORIES ============ -->
+  <section class="categories-section" id="categories-section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">
+            <span class="icon">🎮</span>
+            Popular Games
+          </h2>
+          <p class="section-subtitle">Browse mods by your favorite titles</p>
+        </div>
+        <a href="#" class="section-link">View All Games →</a>
+      </div>
+
+      <div class="games-scroll-container" id="games-scroll">
+        <!-- Game cards rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRENDING MODS ============ -->
+  <section class="trending-section" id="trending-section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">
+            <span class="icon">🔥</span>
+            Trending Mods
+          </h2>
+          <p class="section-subtitle">Most popular mods this week</p>
+        </div>
+        <a href="#" class="section-link">Browse All →</a>
+      </div>
+
+      <div class="trending-tabs" id="trending-tabs">
+        <button class="trending-tab active" data-tab="trending">Trending</button>
+        <button class="trending-tab" data-tab="latest">Latest</button>
+        <button class="trending-tab" data-tab="updated">Recently Updated</button>
+        <button class="trending-tab" data-tab="endorsed">Most Endorsed</button>
+      </div>
+
+      <div class="mods-grid" id="mods-grid">
+        <!-- Mod cards rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED MOD BANNER ============ -->
+  <section class="container">
+    <div class="featured-banner" id="featured-banner">
+      <div class="featured-banner-inner">
+        <div class="featured-banner-content">
+          <div class="featured-label">⭐ Featured Collection</div>
+          <h2 class="featured-title">The Ultimate Skyrim Modding Guide 2024</h2>
+          <p class="featured-desc">A carefully curated collection of 150+ compatible mods that transform Skyrim into a breathtaking modern RPG. Includes step-by-step installation instructions and conflict resolution patches.</p>
+          <div class="featured-meta">
+            <div class="featured-meta-item">
+              <div class="featured-meta-value">153</div>
+              <div class="featured-meta-label">Mods Included</div>
+            </div>
+            <div class="featured-meta-item">
+              <div class="featured-meta-value">4.9★</div>
+              <div class="featured-meta-label">Rating</div>
+            </div>
+            <div class="featured-meta-item">
+              <div class="featured-meta-value">2.1M</div>
+              <div class="featured-meta-label">Downloads</div>
+            </div>
+          </div>
+        </div>
+        <div class="featured-banner-image">
+          <img src="images/mod_landscape.png" alt="Featured Collection Screenshot" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACTIVITY + SIDEBAR ============ -->
+  <section class="activity-section" id="activity-section">
+    <div class="container">
+      <div class="activity-layout">
+        <!-- Left: Activity Feed -->
+        <div>
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">
+                <span class="icon">⚡</span>
+                Latest Activity
+              </h2>
+              <p class="section-subtitle">Real-time mod updates and uploads</p>
+            </div>
+          </div>
+          <div class="activity-feed" id="activity-feed">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Right: Sidebar -->
+        <div class="sidebar" id="sidebar">
+          <!-- Top Authors Leaderboard -->
+          <div class="sidebar-card" id="leaderboard-card">
+            <div class="sidebar-card-header">
+              <h3 class="sidebar-card-title"><span class="icon">🏆</span> Top Authors</h3>
+              <a href="#" class="section-link" style="font-size:12px;">View All</a>
+            </div>
+            <div class="sidebar-card-body" id="leaderboard-body">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+
+          <!-- Premium CTA -->
+          <div class="premium-cta" id="premium-cta">
+            <div class="premium-cta-icon">👑</div>
+            <h3 class="premium-cta-title">Go Premium</h3>
+            <p class="premium-cta-desc">Enjoy unlimited download speeds, no ads, and exclusive access to premium mod collections.</p>
+            <button class="btn btn-primary">Upgrade Now — $4.99/mo</button>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="sidebar-card" id="quick-stats-card">
+            <div class="sidebar-card-header">
+              <h3 class="sidebar-card-title"><span class="icon">📊</span> Today's Stats</h3>
+            </div>
+            <div class="sidebar-card-body">
+              <div style="display: flex; flex-direction: column; gap: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 13px; color: var(--text-secondary);">New Mods</span>
+                  <span style="font-family: 'Rajdhani'; font-size: 18px; font-weight: 700; color: var(--accent-green);">+247</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 13px; color: var(--text-secondary);">Downloads Today</span>
+                  <span style="font-family: 'Rajdhani'; font-size: 18px; font-weight: 700; color: var(--accent-secondary);">1.8M</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 13px; color: var(--text-secondary);">Active Users</span>
+                  <span style="font-family: 'Rajdhani'; font-size: 18px; font-weight: 700; color: var(--accent-purple);">143K</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 13px; color: var(--text-secondary);">New Members</span>
+                  <span style="font-family: 'Rajdhani'; font-size: 18px; font-weight: 700; color: var(--accent-primary);">+3,412</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMMUNITY STATS BAR ============ -->
+  <section class="stats-bar" id="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-value"><span class="accent count-up" data-target="547823">0</span></div>
+          <div class="stat-label">Total Mods</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value"><span class="accent count-up" data-target="42">0</span>.<span class="count-up" data-target="7">0</span>B</div>
+          <div class="stat-label">Total Downloads</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value"><span class="accent count-up" data-target="38">0</span>M+</div>
+          <div class="stat-label">Registered Members</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value"><span class="accent count-up" data-target="2847">0</span></div>
+          <div class="stat-label">Supported Games</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="main-footer" id="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-icon">N</div>
+            <div class="logo-text">NEXUS<span>MODS</span></div>
+          </a>
+          <p class="footer-brand-desc">
+            The largest modding community in the world. Discover, download, and share mods created by a passionate global community of gamers and creators.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="footer-social-link" aria-label="Discord">💬</a>
+            <a href="#" class="footer-social-link" aria-label="Twitter">🐦</a>
+            <a href="#" class="footer-social-link" aria-label="YouTube">▶️</a>
+            <a href="#" class="footer-social-link" aria-label="Reddit">🔴</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-column-title">Browse</h4>
+          <div class="footer-links">
+            <a href="#" class="footer-link">All Games</a>
+            <a href="#" class="footer-link">New Mods</a>
+            <a href="#" class="footer-link">Trending Mods</a>
+            <a href="#" class="footer-link">Collections</a>
+            <a href="#" class="footer-link">Categories</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-column-title">Community</h4>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Forums</a>
+            <a href="#" class="footer-link">Discord Server</a>
+            <a href="#" class="footer-link">Wiki</a>
+            <a href="#" class="footer-link">Bug Reports</a>
+            <a href="#" class="footer-link">Feature Requests</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-column-title">Support</h4>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Help Center</a>
+            <a href="#" class="footer-link">Mod Manager</a>
+            <a href="#" class="footer-link">API Docs</a>
+            <a href="#" class="footer-link">Contact Us</a>
+            <a href="#" class="footer-link">Donate</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-column-title">Company</h4>
+          <div class="footer-links">
+            <a href="#" class="footer-link">About Us</a>
+            <a href="#" class="footer-link">Careers</a>
+            <a href="#" class="footer-link">Press Kit</a>
+            <a href="#" class="footer-link">Blog</a>
+            <a href="#" class="footer-link">Partners</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2024 Nexus Mods. All rights reserved. All trademarks are property of their respective owners.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ MOD DETAIL MODAL ============ -->
+  <div class="modal-overlay" id="mod-modal">
+    <div class="modal-content" id="mod-modal-content">
+      <div class="modal-header">
+        <img id="modal-image" src="" alt="Mod screenshot" />
+        <div class="modal-header-overlay"></div>
+        <button class="modal-close" id="modal-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <h2 class="modal-mod-title" id="modal-title"></h2>
+        <p class="modal-mod-game" id="modal-game"></p>
+        <p class="modal-mod-desc" id="modal-desc"></p>
+        <div class="modal-stats-row">
+          <div class="modal-stat">
+            <div class="modal-stat-value" id="modal-downloads"></div>
+            <div class="modal-stat-label">Downloads</div>
+          </div>
+          <div class="modal-stat">
+            <div class="modal-stat-value" id="modal-endorsements"></div>
+            <div class="modal-stat-label">Endorsements</div>
+          </div>
+          <div class="modal-stat">
+            <div class="modal-stat-value" id="modal-version"></div>
+            <div class="modal-stat-label">Version</div>
+          </div>
+          <div class="modal-stat">
+            <div class="modal-stat-value" id="modal-size"></div>
+            <div class="modal-stat-label">File Size</div>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-primary btn-lg">⬇️ Download (Manual)</button>
+          <button class="btn btn-ghost btn-lg">📦 Download with Manager</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SEARCH OVERLAY ============ -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-overlay-content">
+      <input type="text" class="search-overlay-input" id="search-overlay-input" placeholder="Search for mods, games, or users..." aria-label="Search" />
+      <div class="search-suggestions" id="search-suggestions">
+        <div class="search-suggestion-item">
+          <div class="search-suggestion-icon">🎮</div>
+          <span class="search-suggestion-text">Skyrim Special Edition</span>
+          <span class="search-suggestion-type">Game</span>
+        </div>
+        <div class="search-suggestion-item">
+          <div class="search-suggestion-icon">📦</div>
+          <span class="search-suggestion-text">SkyUI - Elegant Interface</span>
+          <span class="search-suggestion-type">Mod</span>
+        </div>
+        <div class="search-suggestion-item">
+          <div class="search-suggestion-icon">📦</div>
+          <span class="search-suggestion-text">Unofficial Skyrim Patch</span>
+          <span class="search-suggestion-type">Mod</span>
+        </div>
+        <div class="search-suggestion-item">
+          <div class="search-suggestion-icon">🎮</div>
+          <span class="search-suggestion-text">Cyberpunk 2077</span>
+          <span class="search-suggestion-type">Game</span>
+        </div>
+        <div class="search-suggestion-item">
+          <div class="search-suggestion-icon">👤</div>
+          <span class="search-suggestion-text">Arthmoor</span>
+          <span class="search-suggestion-type">Author</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============ JAVASCRIPT ============ -->
+  <script>
+    // ================================================================
+    //  DATA
+    // ================================================================
+    const GAMES = [
+      { name: "Skyrim Special Edition", mods: 74231, color: "#5c9fd6" },
+      { name: "Fallout 4", mods: 41200, color: "#5cb85c" },
+      { name: "Cyberpunk 2077", mods: 18340, color: "#e84393" },
+      { name: "Starfield", mods: 12780, color: "#6c5ce7" },
+      { name: "Stardew Valley", mods: 21540, color: "#fdcb6e" },
+      { name: "Baldur's Gate 3", mods: 15620, color: "#e17055" },
+      { name: "The Witcher 3", mods: 8940, color: "#d63031" },
+      { name: "Monster Hunter Rise", mods: 6320, color: "#00b894" },
+      { name: "Elden Ring", mods: 4870, color: "#ffeaa7" },
+      { name: "Mount & Blade II", mods: 9210, color: "#fab1a0" },
+      { name: "Hogwarts Legacy", mods: 3210, color: "#a29bfe" },
+      { name: "Oblivion", mods: 31600, color: "#74b9ff" },
+    ];
+
+    const MODS_DATA = {
+      trending: [
+        {
+          title: "Mystical Enchanted Forests",
+          game: "Skyrim Special Edition",
+          category: "Environment",
+          author: "NatureWizard",
+          authorInitials: "NW",
+          downloads: "482K",
+          endorsements: "28.4K",
+          description: "Transform your game world with bioluminescent flora, ancient ruins, and atmospheric lighting.",
+          image: "images/mod_featured_1.png",
+          hot: true,
+          version: "v3.2.1",
+          size: "2.4 GB"
+        },
+        {
+          title: "Aethelred's Reach - Arcane Weapons",
+          game: "Skyrim Special Edition",
+          category: "Weapons",
+          author: "RuneSmith",
+          authorInitials: "RS",
+          downloads: "156K",
+          endorsements: "12.1K",
+          description: "Over 80 unique enchanted weapons with custom animations, effects, and lore-friendly backstories.",
+          image: "images/mod_weapon.png",
+          hot: false,
+          version: "v2.0.4",
+          size: "890 MB"
+        },
+        {
+          title: "Dragonborn Armor Collection",
+          game: "Skyrim Special Edition",
+          category: "Armor",
+          author: "CrystalForge",
+          authorInitials: "CF",
+          downloads: "312K",
+          endorsements: "19.8K",
+          description: "25 new armor sets with enchanted crystal accents, HDT-SMP physics, and CBBE/BHUNP support.",
+          image: "images/mod_armor.png",
+          hot: true,
+          version: "v4.1.0",
+          size: "1.6 GB"
+        },
+        {
+          title: "Rudy ENB & ELFX Complete",
+          game: "Skyrim Special Edition",
+          category: "Visuals",
+          author: "RudyPCGamer",
+          authorInitials: "RP",
+          downloads: "1.2M",
+          endorsements: "56.7K",
+          description: "Complete lighting and weather overhaul with ENB preset for breathtaking visuals.",
+          image: "images/mod_landscape.png",
+          hot: false,
+          version: "v5.0.0",
+          size: "420 MB"
+        },
+        {
+          title: "Medieval Towns Reimagined",
+          game: "Skyrim Special Edition",
+          category: "Cities",
+          author: "TownBuilder",
+          authorInitials: "TB",
+          downloads: "287K",
+          endorsements: "15.3K",
+          description: "Complete overhaul of all major towns with 4K textures, new NPCs, and immersive streets.",
+          image: "images/mod_featured_2.png",
+          hot: false,
+          version: "v3.5.2",
+          size: "3.1 GB"
+        },
+        {
+          title: "Neon Streets: Cyberpunk Overhaul",
+          game: "Cyberpunk 2077",
+          category: "Visuals",
+          author: "NeonDreamer",
+          authorInitials: "ND",
+          downloads: "890K",
+          endorsements: "41.3K",
+          description: "Ray-traced reflections, volumetric fog, neon-soaked atmosphere, and 200+ new assets.",
+          image: "images/mod_featured_3.png",
+          hot: true,
+          version: "v2.8.0",
+          size: "5.2 GB"
+        },
+        {
+          title: "Arcane Rune Magic System",
+          game: "Baldur's Gate 3",
+          category: "Gameplay",
+          author: "SpellWeaver",
+          authorInitials: "SW",
+          downloads: "98K",
+          endorsements: "7.2K",
+          description: "Adds 40+ new spells with unique visual effects and a rune crafting system.",
+          image: "images/mod_weapon.png",
+          hot: false,
+          version: "v1.4.0",
+          size: "340 MB"
+        },
+        {
+          title: "Ultimate Flora & Terrain Pack",
+          game: "Starfield",
+          category: "Environment",
+          author: "CosmicGardener",
+          authorInitials: "CG",
+          downloads: "145K",
+          endorsements: "9.1K",
+          description: "Hundreds of new alien plants, terrain textures, and atmospheric effects for alien worlds.",
+          image: "images/mod_featured_1.png",
+          hot: false,
+          version: "v2.1.0",
+          size: "1.8 GB"
+        },
+      ],
+      latest: [],
+      updated: [],
+      endorsed: []
+    };
+
+    // Generate variations for other tabs
+    MODS_DATA.latest = [...MODS_DATA.trending].reverse().map(m => ({...m, hot: false}));
+    MODS_DATA.updated = [...MODS_DATA.trending].sort(() => Math.random() - 0.5);
+    MODS_DATA.endorsed = [...MODS_DATA.trending].sort((a, b) => {
+      const parseK = v => parseFloat(v.replace('K','').replace('M','')) * (v.includes('M') ? 1000 : 1);
+      return parseK(b.endorsements) - parseK(a.endorsements);
+    });
+
+    const ACTIVITY_DATA = [
+      { type: "upload", title: "Immersive Citizens AI Overhaul v3.0", author: "CivicMind", game: "Skyrim SE", time: "2 min ago", image: "images/mod_featured_2.png" },
+      { type: "update", title: "Enhanced Blood Textures - Patch 4.2", author: "SplatterArt", game: "Skyrim SE", time: "8 min ago", image: "images/mod_armor.png" },
+      { type: "comment", title: "SkyUI - Elegant Interface Overhaul", author: "UIDesigner42", game: "Skyrim SE", time: "12 min ago", image: "images/mod_landscape.png" },
+      { type: "upload", title: "Cybernetic Arms Pack v1.0", author: "ChromeSmith", game: "Cyberpunk 2077", time: "18 min ago", image: "images/mod_featured_3.png" },
+      { type: "update", title: "JK's Skyrim - All-in-One Patch", author: "JKProjectX", game: "Skyrim SE", time: "25 min ago", image: "images/mod_featured_1.png" },
+      { type: "upload", title: "Realistic Weather Systems v2.5", author: "StormChaser", game: "Starfield", time: "32 min ago", image: "images/mod_weapon.png" },
+      { type: "comment", title: "Dragonborn Armor Collection", author: "LoreKeeper", game: "Skyrim SE", time: "45 min ago", image: "images/mod_armor.png" },
+      { type: "upload", title: "Night City Radio Stations+", author: "RadioHead77", game: "Cyberpunk 2077", time: "1 hour ago", image: "images/mod_featured_3.png" },
+    ];
+
+    const LEADERBOARD_DATA = [
+      { name: "Arthmoor", points: "2.4M endorsements", initials: "AR" },
+      { name: "EnaiSiaion", points: "1.8M endorsements", initials: "ES" },
+      { name: "ElSopa", points: "1.5M endorsements", initials: "EL" },
+      { name: "RudyPCGamer", points: "980K endorsements", initials: "RP" },
+      { name: "NatureWizard", points: "870K endorsements", initials: "NW" },
+    ];
+
+    // ================================================================
+    //  RENDER FUNCTIONS
+    // ================================================================
+
+    function renderGames() {
+      const container = document.getElementById('games-scroll');
+      container.innerHTML = GAMES.map(game => `
+        <div class="game-card" onclick="void(0)">
+          <div class="game-card-bg" style="background: linear-gradient(135deg, ${game.color}33 0%, ${game.color}11 100%);"></div>
+          <div class="game-card-overlay" style="background: linear-gradient(180deg, ${game.color}15 0%, rgba(13,15,20,0.95) 100%);"></div>
+          <div class="game-card-content">
+            <div style="font-size: 32px; margin-bottom: 8px; opacity: 0.9;">🎮</div>
+            <div class="game-card-name">${game.name}</div>
+            <div class="game-card-mods"><span>${game.mods.toLocaleString()}</span> mods</div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderMods(tab = 'trending') {
+      const container = document.getElementById('mods-grid');
+      const mods = MODS_DATA[tab] || MODS_DATA.trending;
+      container.innerHTML = mods.map((mod, i) => `
+        <div class="mod-card animate-fade-in-up" style="opacity:0; animation-delay: ${i * 0.06}s" onclick="openModModal(${JSON.stringify(mod).replace(/"/g, '&quot;')})">
+          <div class="mod-card-image">
+            <img src="${mod.image}" alt="${mod.title}" loading="lazy" />
+            <div class="mod-card-image-overlay"></div>
+            <span class="mod-card-category">${mod.category}</span>
+            ${mod.hot ? '<span class="mod-card-hot">🔥 HOT</span>' : ''}
+          </div>
+          <div class="mod-card-body">
+            <div class="mod-card-game">🎮 ${mod.game}</div>
+            <h3 class="mod-card-title">${mod.title}</h3>
+            <p class="mod-card-description">${mod.description}</p>
+            <div class="mod-card-footer">
+              <div class="mod-card-author">
+                <div class="mod-card-author-avatar">${mod.authorInitials}</div>
+                <span class="mod-card-author-name">${mod.author}</span>
+              </div>
+              <div class="mod-card-stats">
+                <span class="mod-stat downloads">⬇ ${mod.downloads}</span>
+                <span class="mod-stat endorsements">👍 ${mod.endorsements}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderActivity() {
+      const container = document.getElementById('activity-feed');
+      container.innerHTML = ACTIVITY_DATA.map(item => `
+        <div class="activity-item">
+          <div class="activity-item-image">
+            <img src="${item.image}" alt="${item.title}" loading="lazy" />
+          </div>
+          <div class="activity-item-content">
+            <div class="activity-item-type ${item.type}">${item.type === 'upload' ? '📤 New Upload' : item.type === 'update' ? '🔄 Updated' : '💬 Comment'}</div>
+            <h4 class="activity-item-title">${item.title}</h4>
+            <div class="activity-item-meta">
+              <span>by <strong style="color: var(--text-primary);">${item.author}</strong></span>
+              <span>•</span>
+              <span>${item.game}</span>
+              <span class="activity-item-time">• ${item.time}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderLeaderboard() {
+      const container = document.getElementById('leaderboard-body');
+      const rankClasses = ['gold', 'silver', 'bronze', '', ''];
+      container.innerHTML = LEADERBOARD_DATA.map((user, i) => `
+        <div class="leaderboard-item">
+          <div class="leaderboard-rank ${rankClasses[i]}">${i < 3 ? ['🥇','🥈','🥉'][i] : i + 1}</div>
+          <div class="leaderboard-avatar">${user.initials}</div>
+          <div class="leaderboard-info">
+            <div class="leaderboard-name">${user.name}</div>
+            <div class="leaderboard-points">${user.points}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // ================================================================
+    //  HERO SLIDER
+    // ================================================================
+    let currentSlide = 0;
+    const totalSlides = 3;
+    let slideInterval;
+
+    function goToSlide(index) {
+      const slides = document.querySelectorAll('.hero-slide');
+      const dots = document.querySelectorAll('.hero-dot');
+      slides.forEach(s => s.classList.remove('active'));
+      dots.forEach(d => d.classList.remove('active'));
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      goToSlide((currentSlide + 1) % totalSlides);
+    }
+
+    function startSlider() {
+      slideInterval = setInterval(nextSlide, 6000);
+    }
+
+    function resetSlider() {
+      clearInterval(slideInterval);
+      startSlider();
+    }
+
+    document.getElementById('hero-dots').addEventListener('click', (e) => {
+      const dot = e.target.closest('.hero-dot');
+      if (dot) {
+        goToSlide(parseInt(dot.dataset.slide));
+        resetSlider();
+      }
+    });
+
+    // ================================================================
+    //  TRENDING TABS
+    // ================================================================
+    document.getElementById('trending-tabs').addEventListener('click', (e) => {
+      const tab = e.target.closest('.trending-tab');
+      if (!tab) return;
+      document.querySelectorAll('.trending-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      renderMods(tab.dataset.tab);
+    });
+
+    // ================================================================
+    //  MOD MODAL
+    // ================================================================
+    function openModModal(mod) {
+      const modal = document.getElementById('mod-modal');
+      document.getElementById('modal-image').src = mod.image;
+      document.getElementById('modal-title').textContent = mod.title;
+      document.getElementById('modal-game').textContent = `🎮 ${mod.game} • ${mod.category}`;
+      document.getElementById('modal-desc').textContent = mod.description;
+      document.getElementById('modal-downloads').textContent = mod.downloads;
+      document.getElementById('modal-endorsements').textContent = mod.endorsements;
+      document.getElementById('modal-version').textContent = mod.version || 'v1.0.0';
+      document.getElementById('modal-size').textContent = mod.size || '—';
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModModal() {
+      document.getElementById('mod-modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('modal-close').addEventListener('click', closeModModal);
+    document.getElementById('mod-modal').addEventListener('click', (e) => {
+      if (e.target === e.currentTarget) closeModModal();
+    });
+
+    // ================================================================
+    //  SEARCH OVERLAY
+    // ================================================================
+    const searchInput = document.getElementById('search-input');
+    const searchOverlay = document.getElementById('search-overlay');
+    const searchOverlayInput = document.getElementById('search-overlay-input');
+
+    searchInput.addEventListener('focus', () => {
+      searchOverlay.classList.add('active');
+      setTimeout(() => searchOverlayInput.focus(), 100);
+    });
+
+    searchOverlay.addEventListener('click', (e) => {
+      if (e.target === searchOverlay) {
+        searchOverlay.classList.remove('active');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        searchOverlay.classList.remove('active');
+        closeModModal();
+      }
+    });
+
+    // ================================================================
+    //  NOTIFICATIONS DROPDOWN
+    // ================================================================
+    const notifBtn = document.getElementById('btn-notifications');
+    const notifDropdown = document.getElementById('notification-dropdown');
+
+    notifBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      notifDropdown.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!notifDropdown.contains(e.target) && e.target !== notifBtn) {
+        notifDropdown.classList.remove('active');
+      }
+    });
+
+    // ================================================================
+    //  COUNT UP ANIMATION (Intersection Observer)
+    // ================================================================
+    function animateCountUp(el) {
+      const target = parseInt(el.dataset.target);
+      if (!target || el.dataset.animated === 'true') return;
+      el.dataset.animated = 'true';
+      const duration = 2000;
+      const start = performance.now();
+
+      function formatNumber(n) {
+        if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
+        if (n >= 1000) return (n / 1000).toFixed(n >= 10000 ? 0 : 1) + 'K';
+        return n.toLocaleString();
+      }
+
+      function step(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(eased * target);
+        
+        if (target > 10000) {
+          el.textContent = formatNumber(current);
+        } else {
+          el.textContent = current.toLocaleString();
+        }
+        
+        if (progress < 1) requestAnimationFrame(step);
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.count-up[data-target]').forEach(animateCountUp);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    // ================================================================
+    //  INITIALIZE
+    // ================================================================
+    document.addEventListener('DOMContentLoaded', () => {
+      renderGames();
+      renderMods('trending');
+      renderActivity();
+      renderLeaderboard();
+      startSlider();
+
+      // Observe stats section for count-up
+      const statsBar = document.getElementById('stats-bar');
+      if (statsBar) statsObserver.observe(statsBar);
+    });
+  </script>
+
+</body>
+</html>

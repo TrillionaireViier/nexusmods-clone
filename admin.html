@@ -80,11 +80,16 @@
   </style>
 </head>
 <body>
+  <script>
+    if (localStorage.getItem('role') !== 'admin') {
+      window.location.href = '/login';
+    }
+  </script>
   <header class="main-header">
     <div class="header-inner">
       <a href="/" class="logo"><div class="logo-icon">V</div><div class="logo-text">VIIER<span>MODS</span> <span style="font-size: 14px; color: var(--accent-primary); font-family: sans-serif; font-weight: normal; margin-left: 8px;">ADMIN</span></div></a>
       <nav class="main-nav">
-        <a href="/" class="nav-link">Exit Admin</a>
+        <a href="/" class="nav-link" onclick="localStorage.removeItem('role')">Logout & Exit Admin</a>
       </nav>
       <div class="header-actions">
         <div class="user-avatar" style="border: 2px solid var(--accent-primary);">A</div>

@@ -117,5 +117,22 @@
       </form>
     </div>
   </main>
+  <script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const user = document.querySelector('input[type="text"]').value;
+      const pass = document.querySelector('input[type="password"]').value;
+      
+      if (user === 'admin' && pass === 'adminpass') {
+        localStorage.setItem('role', 'admin');
+        window.location.href = '/admin';
+      } else if (user === 'user' && pass === 'userpass') {
+        localStorage.setItem('role', 'user');
+        window.location.href = '/';
+      } else {
+        alert('Invalid credentials! Hint: use admin/adminpass or user/userpass');
+      }
+    });
+  </script>
 </body>
 </html>

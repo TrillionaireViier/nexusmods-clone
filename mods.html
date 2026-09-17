@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mods - Nexus Mods</title>
+  <meta name="description" content="Browse and search for mods across all supported games." />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23d98f40'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial' font-weight='900' font-size='20' fill='%230d0f14'%3EN%3C/text%3E%3C/svg%3E" />
+  <style>
+    .page-hero {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: var(--space-3xl) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(74, 158, 255, 0.06) 0%, transparent 60%);
+    }
+    .page-hero-content { position: relative; z-index: 2; }
+    .page-hero h1 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 42px; font-weight: 700; margin-bottom: var(--space-sm);
+    }
+    .page-hero p { font-size: 16px; color: var(--text-secondary); max-width: 560px; }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><div class="logo-icon">N</div><div class="logo-text">NEXUS<span>MODS</span></div></a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="games.html" class="nav-link">Games</a>
+        <a href="mods.html" class="nav-link active">Mods</a>
+        <a href="community.html" class="nav-link">Community</a>
+        <a href="collections.html" class="nav-link">Collections</a>
+        <a href="news.html" class="nav-link">News</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-ghost">⬆️ Upload</button>
+        <div class="user-avatar">DL</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container page-hero-content">
+      <h1>📦 Discover Mods</h1>
+      <p>Search, filter, and download the best community-created mods to enhance your gameplay.</p>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <main class="container" style="padding-top: var(--space-2xl); padding-bottom: var(--space-3xl);">
+    <div style="display: flex; gap: var(--space-2xl);">
+      
+      <!-- Sidebar Filters -->
+      <aside style="width: 260px; flex-shrink: 0;">
+        <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-lg);">
+          <h3 style="font-family: 'Rajdhani'; font-size: 18px; margin-bottom: var(--space-md); border-bottom: 1px solid var(--border-subtle); padding-bottom: var(--space-sm);">Filter By</h3>
+          
+          <div style="margin-bottom: var(--space-md);">
+            <label style="font-size: 13px; color: var(--text-secondary); display: block; margin-bottom: 4px;">Game</label>
+            <select style="width: 100%; height: 36px; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); color: var(--text-primary); padding: 0 8px;">
+              <option>All Games</option>
+              <option>Skyrim Special Edition</option>
+              <option>Fallout 4</option>
+              <option>Cyberpunk 2077</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom: var(--space-md);">
+            <label style="font-size: 13px; color: var(--text-secondary); display: block; margin-bottom: 4px;">Category</label>
+            <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
+              <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer;"><input type="checkbox" /> Graphics & Visuals</label>
+              <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer;"><input type="checkbox" /> Overhauls</label>
+              <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer;"><input type="checkbox" /> UI & Interface</label>
+              <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer;"><input type="checkbox" /> Weapons & Armor</label>
+            </div>
+          </div>
+          
+          <button class="btn btn-primary" style="width: 100%;">Apply Filters</button>
+        </div>
+      </aside>
+      
+      <!-- Mod List -->
+      <div style="flex: 1;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-lg);">
+          <span style="font-size: 14px; color: var(--text-tertiary);">Showing <strong>1,245</strong> results</span>
+          <select style="background: transparent; border: none; color: var(--text-primary); cursor: pointer; font-size: 14px;">
+            <option>Sort by: Popular (All Time)</option>
+            <option>Sort by: Most Recent</option>
+            <option>Sort by: Endorsements</option>
+          </select>
+        </div>
+        
+        <div class="mods-grid" id="mods-grid">
+           <!-- Mod Cards Placeholder -->
+           <div class="mod-card">
+              <div class="mod-card-image">
+                <img src="images/mod_landscape.png" alt="Mod">
+              </div>
+              <div class="mod-card-body">
+                <h3 class="mod-card-title">Ultimate Visual Overhaul</h3>
+                <p class="mod-card-description">A comprehensive graphics mod that changes everything.</p>
+              </div>
+           </div>
+           <div class="mod-card">
+              <div class="mod-card-image">
+                <img src="images/mod_weapon.png" alt="Mod">
+              </div>
+              <div class="mod-card-body">
+                <h3 class="mod-card-title">Arcane Arsenal</h3>
+                <p class="mod-card-description">Adds 50+ new magical weapons to the game.</p>
+              </div>
+           </div>
+           <div class="mod-card">
+              <div class="mod-card-image">
+                <img src="images/mod_armor.png" alt="Mod">
+              </div>
+              <div class="mod-card-body">
+                <h3 class="mod-card-title">Knight's Valor Set</h3>
+                <p class="mod-card-description">High quality custom armor set for all races.</p>
+              </div>
+           </div>
+           <div class="mod-card">
+              <div class="mod-card-image">
+                <img src="images/mod_featured_3.png" alt="Mod">
+              </div>
+              <div class="mod-card-body">
+                <h3 class="mod-card-title">Cybernetic Enhancements</h3>
+                <p class="mod-card-description">More cyberware options and visual changes.</p>
+              </div>
+           </div>
+        </div>
+        
+        <div style="display: flex; justify-content: center; margin-top: var(--space-2xl);">
+          <button class="btn btn-ghost">Load More</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:none;padding:0;">
+        <p class="footer-copyright">© 2024 Nexus Mods. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

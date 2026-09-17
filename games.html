@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Games - Nexus Mods</title>
+  <meta name="description" content="Browse all supported games on Nexus Mods. Find mods for your favorite titles." />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23d98f40'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial' font-weight='900' font-size='20' fill='%230d0f14'%3EN%3C/text%3E%3C/svg%3E" />
+  <style>
+    .page-hero {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: var(--space-3xl) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(217,143,64,0.06) 0%, transparent 60%);
+    }
+    .page-hero-content {
+      position: relative; z-index: 2;
+    }
+    .page-hero h1 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: var(--space-sm);
+    }
+    .page-hero p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 560px;
+    }
+    .filters-bar {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+      padding: var(--space-xl) 0;
+    }
+    .filter-search {
+      flex: 1; min-width: 240px;
+      height: 42px;
+      padding: 0 16px 0 42px;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      color: var(--text-primary);
+      font-size: 14px;
+      transition: all var(--transition-base);
+      position: relative;
+    }
+    .filter-search:focus {
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(217,143,64,0.1);
+    }
+    .filter-search-wrap {
+      position: relative; flex: 1; min-width: 240px;
+    }
+    .filter-search-wrap .ico {
+      position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+      color: var(--text-tertiary); pointer-events: none; font-size: 15px;
+    }
+    .filter-select {
+      height: 42px;
+      padding: 0 14px;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      color: var(--text-primary);
+      font-size: 13px;
+      cursor: pointer;
+      transition: all var(--transition-base);
+      -webkit-appearance: none;
+    }
+    .filter-select:focus { border-color: var(--accent-primary); }
+    .games-grid-page {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: var(--space-lg);
+      padding-bottom: var(--space-3xl);
+    }
+    .game-tile {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      cursor: pointer;
+      transition: all var(--transition-base);
+    }
+    .game-tile:hover {
+      border-color: var(--accent-primary);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+    }
+    .game-tile-banner {
+      height: 130px;
+      position: relative;
+      overflow: hidden;
+    }
+    .game-tile-banner-bg {
+      width: 100%; height: 100%;
+      transition: transform var(--transition-slow);
+    }
+    .game-tile:hover .game-tile-banner-bg { transform: scale(1.1); }
+    .game-tile-banner-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 30%, rgba(13,15,20,0.9) 100%);
+    }
+    .game-tile-body { padding: var(--space-md); }
+    .game-tile-name {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 17px; font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .game-tile-genre {
+      font-size: 11px; color: var(--text-tertiary);
+      text-transform: uppercase; letter-spacing: 0.5px;
+      margin-bottom: var(--space-sm);
+    }
+    .game-tile-stats {
+      display: flex; gap: var(--space-md);
+    }
+    .game-tile-stat {
+      font-size: 12px; color: var(--text-secondary);
+      display: flex; align-items: center; gap: 4px;
+    }
+    .game-tile-stat .num {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700; color: var(--accent-primary);
+    }
+    .results-count {
+      font-size: 14px; color: var(--text-tertiary);
+      padding-bottom: var(--space-md);
+    }
+    .results-count strong { color: var(--text-primary); }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><div class="logo-icon">N</div><div class="logo-text">NEXUS<span>MODS</span></div></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="games.html" class="nav-link active">Games</a>
+        <a href="mods.html" class="nav-link">Mods</a>
+        <a href="community.html" class="nav-link">Community</a>
+        <a href="collections.html" class="nav-link">Collections</a>
+        <a href="news.html" class="nav-link">News</a>
+      </nav>
+      <div class="header-search"><span class="search-icon">🔍</span><input type="text" placeholder="Search mods, games, users..." aria-label="Search" /></div>
+      <div class="header-actions">
+        <button class="btn btn-ghost">⬆️ Upload</button>
+        <div class="user-avatar">DL</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container page-hero-content">
+      <h1>🎮 All Games</h1>
+      <p>Browse over 2,800 supported games. Find your favorite title and start modding today.</p>
+    </div>
+  </section>
+
+  <!-- FILTERS & GRID -->
+  <main class="container">
+    <div class="filters-bar">
+      <div class="filter-search-wrap">
+        <span class="ico">🔍</span>
+        <input type="text" class="filter-search" id="game-search" placeholder="Search games..." />
+      </div>
+      <select class="filter-select" id="genre-filter">
+        <option value="all">All Genres</option>
+        <option value="RPG">RPG</option>
+        <option value="Action">Action</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Simulation">Simulation</option>
+        <option value="Strategy">Strategy</option>
+        <option value="Sandbox">Sandbox</option>
+        <option value="Survival">Survival</option>
+        <option value="Shooter">Shooter</option>
+      </select>
+      <select class="filter-select" id="sort-filter">
+        <option value="mods">Most Mods</option>
+        <option value="name">Alphabetical</option>
+        <option value="downloads">Most Downloads</option>
+        <option value="newest">Newest</option>
+      </select>
+    </div>
+    <div class="results-count" id="results-count"></div>
+    <div class="games-grid-page" id="games-grid"></div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:none;padding:0;">
+        <p class="footer-copyright">© 2024 Nexus Mods. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a><a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const ALL_GAMES = [
+      { name: "Skyrim Special Edition", genre: "RPG", mods: 74231, downloads: "4.2B", year: 2016 },
+      { name: "Fallout 4", genre: "RPG", mods: 41200, downloads: "2.8B", year: 2015 },
+      { name: "Stardew Valley", genre: "Simulation", mods: 21540, downloads: "890M", year: 2016 },
+      { name: "Cyberpunk 2077", genre: "RPG", mods: 18340, downloads: "620M", year: 2020 },
+      { name: "Baldur's Gate 3", genre: "RPG", mods: 15620, downloads: "410M", year: 2023 },
+      { name: "Starfield", genre: "RPG", mods: 12780, downloads: "380M", year: 2023 },
+      { name: "Oblivion", genre: "RPG", mods: 31600, downloads: "1.9B", year: 2006 },
+      { name: "Mount & Blade II: Bannerlord", genre: "Strategy", mods: 9210, downloads: "310M", year: 2020 },
+      { name: "The Witcher 3", genre: "RPG", mods: 8940, downloads: "540M", year: 2015 },
+      { name: "Monster Hunter Rise", genre: "Action", mods: 6320, downloads: "180M", year: 2021 },
+      { name: "Elden Ring", genre: "Action", mods: 4870, downloads: "220M", year: 2022 },
+      { name: "Hogwarts Legacy", genre: "Adventure", mods: 3210, downloads: "95M", year: 2023 },
+      { name: "Fallout New Vegas", genre: "RPG", mods: 23400, downloads: "1.5B", year: 2010 },
+      { name: "Morrowind", genre: "RPG", mods: 12300, downloads: "680M", year: 2002 },
+      { name: "Dragon Age: Inquisition", genre: "RPG", mods: 4100, downloads: "120M", year: 2014 },
+      { name: "Skyrim Legendary Edition", genre: "RPG", mods: 68200, downloads: "5.1B", year: 2011 },
+      { name: "Fallout 3", genre: "RPG", mods: 17800, downloads: "920M", year: 2008 },
+      { name: "No Man's Sky", genre: "Survival", mods: 2890, downloads: "78M", year: 2016 },
+      { name: "Valheim", genre: "Survival", mods: 4560, downloads: "145M", year: 2021 },
+      { name: "Dark Souls 3", genre: "Action", mods: 2340, downloads: "88M", year: 2016 },
+      { name: "Minecraft (Java)", genre: "Sandbox", mods: 35100, downloads: "3.2B", year: 2011 },
+      { name: "Terraria", genre: "Sandbox", mods: 6700, downloads: "210M", year: 2011 },
+      { name: "GTA V", genre: "Action", mods: 8900, downloads: "580M", year: 2015 },
+      { name: "Resident Evil 4 Remake", genre: "Action", mods: 1890, downloads: "42M", year: 2023 },
+      { name: "Mass Effect Legendary", genre: "RPG", mods: 3200, downloads: "98M", year: 2021 },
+      { name: "Palworld", genre: "Survival", mods: 2100, downloads: "56M", year: 2024 },
+      { name: "Dragon's Dogma 2", genre: "RPG", mods: 1650, downloads: "38M", year: 2024 },
+      { name: "Sekiro", genre: "Action", mods: 1200, downloads: "31M", year: 2019 },
+      { name: "RimWorld", genre: "Strategy", mods: 11200, downloads: "420M", year: 2018 },
+      { name: "Cities: Skylines II", genre: "Simulation", mods: 3400, downloads: "72M", year: 2023 },
+      { name: "Subnautica", genre: "Survival", mods: 980, downloads: "18M", year: 2018 },
+      { name: "Kenshi", genre: "Strategy", mods: 4300, downloads: "110M", year: 2018 },
+    ];
+
+    const COLORS = ['#5c9fd6','#5cb85c','#e84393','#6c5ce7','#fdcb6e','#e17055','#d63031','#00b894','#ffeaa7','#fab1a0','#a29bfe','#74b9ff','#ff7675','#55efc4','#81ecec','#dfe6e9'];
+
+    function renderGames(games) {
+      const grid = document.getElementById('games-grid');
+      document.getElementById('results-count').innerHTML = `Showing <strong>${games.length}</strong> games`;
+      grid.innerHTML = games.map((g, i) => {
+        const c = COLORS[i % COLORS.length];
+        return `
+        <div class="game-tile" onclick="location.href='mods.html'">
+          <div class="game-tile-banner">
+            <div class="game-tile-banner-bg" style="background: linear-gradient(135deg, ${c}44 0%, ${c}11 100%); display:flex;align-items:center;justify-content:center;">
+              <span style="font-size:48px;opacity:0.7;">🎮</span>
+            </div>
+            <div class="game-tile-banner-overlay"></div>
+          </div>
+          <div class="game-tile-body">
+            <div class="game-tile-name">${g.name}</div>
+            <div class="game-tile-genre">${g.genre} • ${g.year}</div>
+            <div class="game-tile-stats">
+              <div class="game-tile-stat"><span class="num">${g.mods.toLocaleString()}</span> mods</div>
+              <div class="game-tile-stat">⬇ ${g.downloads}</div>
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    function applyFilters() {
+      const q = document.getElementById('game-search').value.toLowerCase();
+      const genre = document.getElementById('genre-filter').value;
+      const sort = document.getElementById('sort-filter').value;
+      let filtered = ALL_GAMES.filter(g => {
+        if (q && !g.name.toLowerCase().includes(q)) return false;
+        if (genre !== 'all' && g.genre !== genre) return false;
+        return true;
+      });
+      if (sort === 'mods') filtered.sort((a,b) => b.mods - a.mods);
+      else if (sort === 'name') filtered.sort((a,b) => a.name.localeCompare(b.name));
+      else if (sort === 'newest') filtered.sort((a,b) => b.year - a.year);
+      else if (sort === 'downloads') {
+        const parse = v => { const n = parseFloat(v); return v.includes('B') ? n*1e9 : n*1e6; };
+        filtered.sort((a,b) => parse(b.downloads) - parse(a.downloads));
+      }
+      renderGames(filtered);
+    }
+
+    document.getElementById('game-search').addEventListener('input', applyFilters);
+    document.getElementById('genre-filter').addEventListener('change', applyFilters);
+    document.getElementById('sort-filter').addEventListener('change', applyFilters);
+    applyFilters();
+  </script>
+</body>
+</html>
